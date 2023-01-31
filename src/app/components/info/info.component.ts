@@ -6,12 +6,16 @@ import json from '../../../assets/data/customer-details.json';
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.scss'],
 })
-export class InfoComponent implements OnInit, OnChanges {
+export class InfoComponent implements OnChanges {
   @Input() selectedActor: string = '';
+  actorsList = json;
+  actorInfo: any;
 
-  ngOnInit() {}
   ngOnChanges(changes: any) {
-    console.log(this.selectedActor);
+    this.actorInfo = this.actorsList.find(
+      (actor) => actor.username === this.selectedActor
+    );
+    console.log(this.actorInfo);
   }
   constructor() {}
 }

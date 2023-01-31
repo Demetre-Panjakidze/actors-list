@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="backDiv">
+    <div class="goBack">
+      <span>&lt;</span>
+      <span>Go back</span>
+    </div>
+  </div>
+  <article>
+    <h1 *ngIf="actorInfo">
+      {{ actorInfo.firstName }} {{ actorInfo.lastName }}
+    </h1>
+    <hr />
+    <p *ngIf="actorInfo">{{ actorInfo.aboutMe }}</p>
+  </article>
+</div>
