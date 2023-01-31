@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "username": "Jim Carrey",
+    "firstName": "Jim",
+    "lastName": "Carrey",
+    "aboutMe": "About Jim"
+  },
+  {
+    "id": 2,
+    "username": "Tom Hanks",
+    "firstName": "Tom",
+    "lastName": "Hanks",
+    "aboutMe": "About Tom"
+  },
+  {
+    "id": 3,
+    "username": "Christian Bale",
+    "firstName": "Christian",
+    "lastName": "Bale",
+    "aboutMe": "About Christian"
+  },
+  {
+    "id": 4,
+    "username": "Daniel Day-Lewis",
+    "firstName": "Daniel",
+    "lastName": "Day-Lewis",
+    "aboutMe": "About Daniel"
+  }
+]
