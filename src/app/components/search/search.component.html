@@ -1,1 +1,20 @@
-<p>search works!</p>
+<form action="">
+  <select
+    name="actorsList"
+    id="select"
+    [(ngModel)]="selectedOption"
+    (change)="selectedOptionChange($event)"
+  >
+    <option value="" selected>Select actor</option>
+    <option [value]="actor.username" *ngFor="let actor of actorsList">
+      {{ actor.username }}
+    </option>
+  </select>
+  <button
+    (click)="search($event)"
+    [disabled]="btnDisabled"
+    [ngClass]="{ pointer: !btnDisabled }"
+  >
+    <img src="assets/searchBtn.png" alt="" />
+  </button>
+</form>
