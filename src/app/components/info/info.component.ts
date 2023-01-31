@@ -1,4 +1,11 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+} from '@angular/core';
 import json from '../../../assets/data/customer-details.json';
 
 @Component({
@@ -8,8 +15,10 @@ import json from '../../../assets/data/customer-details.json';
 })
 export class InfoComponent implements OnChanges {
   @Input() selectedActor: string = '';
+  @Output() infoOnScreen = new EventEmitter<any>();
   actorsList = json;
   actorInfo: any;
+  infoDisplayed: boolean = true;
 
   ngOnChanges(changes: any) {
     this.actorInfo = this.actorsList.find(
@@ -17,5 +26,11 @@ export class InfoComponent implements OnChanges {
     );
     console.log(this.actorInfo);
   }
+
+  goBack = () => {
+    this.infoDisplayed = false;
+    this.infoOnScreen.emit(this.infoDisplayed);
+  };
+
   constructor() {}
 }

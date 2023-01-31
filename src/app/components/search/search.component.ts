@@ -8,9 +8,11 @@ import json from '../../../assets/data/customer-list.json';
 })
 export class SearchComponent implements OnInit {
   @Output() selectedActor = new EventEmitter<any>();
+  @Output() searchOnScreen = new EventEmitter<any>();
   actorsList = json;
   selectedOption = '';
   btnDisabled: boolean = false;
+  searchDisplayed: boolean = true;
 
   checkValue = () => {
     if (!this.selectedOption) {
@@ -21,7 +23,9 @@ export class SearchComponent implements OnInit {
   };
 
   search(event: any) {
+    this.searchDisplayed = false;
     event.preventDefault();
+    this.searchOnScreen.emit(this.searchDisplayed);
     this.selectedActor.emit(this.selectedOption);
   }
 
