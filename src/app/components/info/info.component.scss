@@ -1,0 +1,41 @@
+.container {
+  .backDiv {
+    background-color: gray;
+    padding: 10px;
+
+    .goBack {
+      display: inline-block;
+      padding: 5px;
+      background-color: #fff;
+      cursor: pointer;
+
+      .first-span {
+        margin: 0 5px 0 0;
+      }
+
+      &:is(:hover, :active) {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  article {
+    margin: 20px;
+    display: flex;
+    gap: 50px;
+
+    img {
+      min-width: 150px;
+    }
+
+    .article-content {
+      hr {
+        margin: 10px 0 20px 0;
+      }
+
+      p {
+        text-indent: 16px;
+      }
+    }
+  }
+}
