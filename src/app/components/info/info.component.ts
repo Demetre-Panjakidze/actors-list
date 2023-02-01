@@ -24,7 +24,6 @@ export class InfoComponent implements OnChanges {
     this.actorInfo = this.actorsList.find(
       (actor) => actor.username === this.selectedActor
     );
-    console.log(this.actorInfo);
   }
 
   goBack = () => {

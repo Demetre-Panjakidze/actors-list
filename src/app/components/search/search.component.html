@@ -5,7 +5,7 @@
     [(ngModel)]="selectedOption"
     (change)="selectedOptionChange($event)"
   >
-    <option value="" selected>Select actor</option>
+    <option value="" selected>Select an actor</option>
     <option [value]="actor.username" *ngFor="let actor of actorsList">
       {{ actor.username }}
     </option>
