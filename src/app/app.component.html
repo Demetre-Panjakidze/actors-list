@@ -1,10 +1,1 @@
-<app-search
-  (selectedActor)="messageGetter($event)"
-  (searchOnScreen)="searchDisplayed($event)"
-  *ngIf="searchOnScreen"
-></app-search>
-<app-info
-  [selectedActor]="selectedActor"
-  (infoOnScreen)="infoDisplayed($event)"
-  *ngIf="infoOnScreen"
-></app-info>
+<router-outlet></router-outlet>

@@ -1,35 +1,17 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import json from '../../../assets/data/customer-details.json';
-
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.scss'],
 })
-export class InfoComponent implements OnChanges {
-  @Input() selectedActor: string = '';
-  @Output() infoOnScreen = new EventEmitter<any>();
-  actorsList = json;
+export class InfoComponent implements OnInit {
   actorInfo: any;
-  infoDisplayed: boolean = true;
+  constructor(private activatedRouter: ActivatedRoute) {}
 
-  ngOnChanges(changes: any) {
-    this.actorInfo = this.actorsList.find(
-      (actor) => actor.username === this.selectedActor
-    );
+  ngOnInit() {
+    const username = this.activatedRouter.snapshot.params['username'];
+    this.actorInfo = json.find((actor: any) => actor.username === username);
   }
-
-  goBack = () => {
-    this.infoDisplayed = false;
-    this.infoOnScreen.emit(this.infoDisplayed);
-  };
-
-  constructor() {}
 }
