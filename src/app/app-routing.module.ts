@@ -9,7 +9,7 @@ const routes: Routes = [
     component: SearchComponent,
   },
   {
-    path: 'actor/:username',
+    path: 'actors/:username',
     component: InfoComponent,
   },
 ];
