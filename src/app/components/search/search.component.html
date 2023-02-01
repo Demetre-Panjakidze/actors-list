@@ -11,6 +11,9 @@
     </option>
   </select>
   <button
+    [routerLink]="['/actor', selectedOption]"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
     (click)="search($event)"
     [disabled]="btnDisabled"
     [ngClass]="{ pointer: !btnDisabled }"
