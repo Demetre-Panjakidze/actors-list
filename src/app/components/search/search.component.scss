@@ -12,9 +12,10 @@ form {
   button {
     width: 40px;
     height: 40px;
-  }
-}
+    cursor: pointer;
 
-.pointer {
-  cursor: pointer;
+    &:disabled {
+      cursor: default;
+    }
+  }
 }
